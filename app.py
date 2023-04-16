@@ -70,8 +70,8 @@ def out():
         # clean_resume = soup.get_text()
         return coverletter
 
-    global resume_text
-    resume_text = resume_ai(user_string, text)
+#     global resume_text
+#     resume_text = resume_ai(user_string, text)
     global cover_text
     cover_text = coverletter_ai(user_string, text)
     return render_template('newresume.html')
