@@ -40,11 +40,11 @@
         <div class="Upload-page">
             <div class="form">
                 <h2>Upload resume and job link<br> Save Time Now!</h2>
-                  <form class="register-form" action="http://127.0.0.1:5000/out" method="POST" enctype="multipart/form-data">
+                  <form class="register-form" action="./out" method="POST" enctype="multipart/form-data">
                     <label for="file">Upload Resume:</label>
-                    <input type="file" id='user_file' name='user_file'>
+                    <input type="file" id='user_file' name='user_file' required>
                     <label for="string">Job link:</label>
-                    <input type="text" id='user_string' name='user_string'>
+                    <input type="text" id='user_string' name='user_string' required>
                     <input type="submit" value="Submit">
                   </form>
             </div>
