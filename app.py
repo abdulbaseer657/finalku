@@ -5,12 +5,14 @@ import docx
 from bs4 import BeautifulSoup
 import PyPDF2
 import io
+from dotenv import load_dotenv
+
 
 
 openai.organization = "org-gG6K1j8fah4HfsIk7JZEGNBO"
 #openai.api_key = "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"
 #openai.api_key = "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"
-openai.api_key = process.API
+openai.api_key = os.getenv("API")
 app = Flask(__name__)
 
 global resume_text
