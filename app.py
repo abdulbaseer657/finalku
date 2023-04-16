@@ -55,7 +55,7 @@ def out():
             model="gpt-3.5-turbo",
             messages=[
                 {"role": "system",
-                 "content": "write a cover letter for my resume {}, make sure you tailor it according to the job description: {} ".format(text, user_string)
+                 "content": "write a cover letter for my resume {}, make sure you tailor it according to the job description: {} , under 500 words ".format(text, user_string)
                  }
             ],)
         coverletter = response['choices'][0]['message']['content']
@@ -76,7 +76,7 @@ def oresume():
             model="gpt-3.5-turbo",
             messages=[
                 {"role": "system",
-                 "content": "re write my complete resume {}, make sure you include all my skills  and tailor it according to the job description: {}".format(text, user_string)
+                 "content": "re write my complete resume {}, make sure you include all my skills  and tailor it according to the job description: {}, under 500 words".format(text, user_string)
                  }
             ],)
         resume = response['choices'][0]['message']['content']
