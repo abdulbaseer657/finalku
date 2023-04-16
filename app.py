@@ -14,10 +14,10 @@ openai.api_key = os.getenv("API")
 
 app = Flask(__name__)
 
-global cover_text
-global user_string
-global user_file
-global text
+# global cover_text
+# global user_string
+# global user_file
+# global text
 
 
 @app.route('/')
