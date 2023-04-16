@@ -5,7 +5,6 @@ import docx
 from bs4 import BeautifulSoup
 import PyPDF2
 import io
-import textract
 
 
 openai.organization = "org-gG6K1j8fah4HfsIk7JZEGNBO"
