@@ -25,5 +25,4 @@ urllib3==1.26.15
 yarl==1.8.2
 gunicorn
 flask
-os-sys
 python-dotenv
