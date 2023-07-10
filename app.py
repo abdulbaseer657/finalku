@@ -51,6 +51,7 @@ def out():
     # print(text)
 
     def coverletter_ai(user_string, text):
+        print("gpt cover letter model called")
         response = openai.ChatCompletion.create(
             model="gpt-3.5-turbo",
             messages=[
@@ -59,6 +60,7 @@ def out():
                  }
             ],)
         coverletter = response['choices'][0]['message']['content']
+        print("model returend the output")
         # soup = BeautifulSoup(resume)
         # clean_resume = soup.get_text()
         return coverletter
