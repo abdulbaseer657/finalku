@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, send_file
+from flask import Flask, render_template, request
 import os
 import openai
 import docx
@@ -6,6 +6,8 @@ from bs4 import BeautifulSoup
 import PyPDF2
 import io
 from dotenv import load_dotenv
+import flask
+from pathlib import Path
 
 openai.organization = "org-gG6K1j8fah4HfsIk7JZEGNBO"
 #openai.api_key = "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"
@@ -89,7 +91,7 @@ def oresume():
     r_document = docx.Document()
     r_document.add_paragraph(resume_text)
     r_document.save('resume.docx')
-    return send_file("resume.docx", mimetype=None, as_attachment=True, download_name="resume")
+    return flask.send_from_directory((p := Path("resume.docx")).parent, p.name, mimetype=None, as_attachment=True, download_name="resume")
 
 
 @app.route('/ocover', methods=['GET', 'POST'])
@@ -97,4 +99,4 @@ def ocover():
     r_document = docx.Document()
     r_document.add_paragraph(cover_text)
     r_document.save('cover.docx')
-    return send_file("cover.docx", mimetype=None, as_attachment=True, download_name="cover")
+    return flask.send_from_directory((p := Path("cover.docx")).parent, p.name, mimetype=None, as_attachment=True, download_name="cover")
